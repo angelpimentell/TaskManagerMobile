@@ -26,5 +26,15 @@ namespace TaskManagerMobile.Services
         public Task<int> SaveTaskAsync(TaskItem task) => task.Id != 0 ? _db.UpdateAsync(task) : _db.InsertAsync(task);
         public Task<int> DeleteTaskAsync(TaskItem task) => _db.DeleteAsync(task);
         public Task<int> GetTaskCountAsync() => _db.Table<TaskItem>().CountAsync();
+
+        public  Task<int> GetCompletedTaskCountAsync()
+        {
+            return  _db.Table<TaskItem>().Where(t => t.IsCompleted).CountAsync();
+        }
+
+        public  Task<int> GetUncompletedTaskCountAsync()
+        {
+            return  _db.Table<TaskItem>().Where(t => !t.IsCompleted).CountAsync();
+        }
     }
 }

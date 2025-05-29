@@ -4,9 +4,15 @@
              Title="Dashboard">
     <StackLayout Padding="10">
         <Label Text="Welcome to Task Manager" FontSize="24" HorizontalOptions="Center" />
-        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
-            <Label Text="Total Tasks:" Grid.Column="0" />
-            <Label x:Name="TotalTasksLabel" Text="Cargando..." Grid.Column="1" />
+        <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto">
+            <Label Text="Total Tasks:" Grid.Row="0" Grid.Column="0" />
+            <Label x:Name="TotalTasksLabel" Text="Cargando..." Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Total completed Tasks:" Grid.Row="1" Grid.Column="0" x:Name="TotalCompletedTaskLabel" />
+            <Label Text="Cargando..." Grid.Row="1" Grid.Column="1" x:Name="TotalCompletedTaskCountLabel" />
+
+            <Label Text="Total uncompleted Tasks:" Grid.Row="2" Grid.Column="0"  x:Name="TotalUncompletedTaskLabel" />
+            <Label Text="Cargando..." Grid.Row="2" Grid.Column="1"  x:Name="TotalUncompletedTaskCountLabel" />
         </Grid>
         <Button Text="View Tasks" Clicked="OnViewTasksClicked" />
     </StackLayout>

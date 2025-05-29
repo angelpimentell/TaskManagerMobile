@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManagerMobile.Views.SettingsPage"
-             Title="SettingsPage">
+             Title="Settings">
     <StackLayout Padding="10">
-        <Label Text="Settings and statistics here" />
+        <Grid ColumnDefinitions="Auto, *" VerticalOptions="Center">
+            <Label Text="Show Completed Tasks" VerticalOptions="Center" />
+            <Switch x:Name="ShowCompletedSwitch" Grid.Column="1" VerticalOptions="Center" Toggled="OnShowCompletedToggled"/>
+        </Grid>
+        <Grid ColumnDefinitions="Auto, *" VerticalOptions="Center">
+            <Label Text="Show Uncompleted Tasks" VerticalOptions="Center" />
+            <Switch x:Name="ShowUncompletedSwitch" Grid.Column="1" VerticalOptions="Center" Toggled="OnShowUncompletedToggled" />
+        </Grid>
     </StackLayout>
 </ContentPage>
