@@ -1,0 +1,14 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagerMobile.Views.TaskEditPage"
+             Title="New Task">
+    <StackLayout Padding="10">
+        <Entry Placeholder="Title" Text="{Binding TaskItem.Title}" />
+        <Editor Placeholder="Description" Text="{Binding TaskItem.Description}" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Completed?" VerticalOptions="Center" />
+            <Switch IsToggled="{Binding TaskItem.IsCompleted}" />
+        </StackLayout>
+        <Button Text="Save" Clicked="OnSaveClicked" />
+    </StackLayout>
+</ContentPage>

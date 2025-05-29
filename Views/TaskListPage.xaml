@@ -1,0 +1,28 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TaskManagerMobile.ViewModels"
+             x:Class="TaskManagerMobile.Views.TaskListPage"
+             Title="Task List">
+
+    <ContentPage.BindingContext>
+        <viewmodels:TasksViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label Text="Your Tasks" FontSize="20" HorizontalOptions="Center" Margin="0,10" />
+
+        <CollectionView ItemsSource="{Binding Tasks}" SelectionMode="Single" SelectionChanged="OnTaskSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" CornerRadius="10" Margin="5">
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="{Binding Description}" FontSize="13" LineBreakMode="TailTruncation" />
+                            <Label Text="{Binding CreatedAt, StringFormat='Created: {0:MM/dd/yyyy}'}" FontSize="11" TextColor="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
