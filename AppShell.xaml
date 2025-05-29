@@ -8,5 +8,10 @@
         <ShellContent Title="Home" ContentTemplate="{DataTemplate local:DashboardPage}" Route="Home" />
         <ShellContent Title="New" ContentTemplate="{DataTemplate local:TaskEditPage}" Route="New" />
         <ShellContent Title="Tasks" ContentTemplate="{DataTemplate local:TaskListPage}" Route="Tasks" />
+        <ShellContent Title="Settings" ContentTemplate="{DataTemplate local:SettingsPage}" Route="Settings" />
+
     </TabBar>
+
+    <ShellContent Route="TaskDetailPage" ContentTemplate="{DataTemplate local:TaskDetailPage}" />
+
 </Shell>

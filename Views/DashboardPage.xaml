@@ -6,7 +6,7 @@
         <Label Text="Welcome to Task Manager" FontSize="24" HorizontalOptions="Center" />
         <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
             <Label Text="Total Tasks:" Grid.Column="0" />
-            <Label Text="10" Grid.Column="1" />
+            <Label x:Name="TotalTasksLabel" Text="Cargando..." Grid.Column="1" />
         </Grid>
         <Button Text="View Tasks" Clicked="OnViewTasksClicked" />
     </StackLayout>

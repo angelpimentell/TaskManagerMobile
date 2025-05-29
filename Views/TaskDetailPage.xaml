@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagerMobile.Views.TaskDetailPage"
+             Title="TaskDetailPage">
+    <StackLayout Padding="10">
+        <Label Text="Title:" />
+        <Label Text="{Binding Title}" />
+        <Label Text="Description:" />
+        <Label Text="{Binding Description}" />
+        <Label Text="Completed?:" />
+        <Label Text="{Binding IsCompleted}" />
+    </StackLayout>
+</ContentPage>

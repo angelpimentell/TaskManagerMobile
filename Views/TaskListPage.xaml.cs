@@ -21,12 +21,14 @@ public partial class TaskListPage : ContentPage
     }
     private async void OnTaskSelected(object sender, SelectionChangedEventArgs e)
     {
+        System.Diagnostics.Debug.WriteLine("Task selected");
+
         if (e.CurrentSelection.FirstOrDefault() is TaskItem selectedTask)
         {
-            //await Navigation.PushAsync(new TaskDetailPage
-            //{
-            //    BindingContext = selectedTask
-            //});
+            await Navigation.PushAsync(new TaskDetailPage
+            {
+                BindingContext = selectedTask
+            });
         }
 
     ((CollectionView)sender).SelectedItem = null;

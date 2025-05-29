@@ -14,13 +14,14 @@
         <CollectionView ItemsSource="{Binding Tasks}" SelectionMode="Single" SelectionChanged="OnTaskSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BorderColor="LightGray" CornerRadius="10" Margin="5">
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" />
-                            <Label Text="{Binding Description}" FontSize="13" LineBreakMode="TailTruncation" />
-                            <Label Text="{Binding CreatedAt, StringFormat='Created: {0:MM/dd/yyyy}'}" FontSize="11" TextColor="Gray" />
-                        </StackLayout>
-                    </Frame>
+                    <Grid InputTransparent="False">
+                        <!-- Allows selection through container -->
+                        <Frame BorderColor="LightGray" CornerRadius="10" Margin="5" HasShadow="True">
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
