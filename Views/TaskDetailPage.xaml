@@ -10,5 +10,10 @@
         <Label Text="{Binding Description}" />
         <Label Text="Completed?:" />
         <Label Text="{Binding IsCompleted}" />
+
+
+        <Button Text="Delete Task" BackgroundColor="Red" TextColor="White" Clicked="OnDeleteClicked" />
+        <Button Text="Edit Task" Clicked="OnEditClicked" />
+
     </StackLayout>
 </ContentPage>

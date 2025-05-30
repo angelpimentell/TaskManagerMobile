@@ -14,6 +14,8 @@ public partial class SettingsPage : ContentPage
         ShowUncompletedSwitch.IsToggled = Preferences.Get("ShowUncompletedTasks", true);
     }
 
+
+
     private void OnShowCompletedToggled(object sender, ToggledEventArgs e)
     {
         Preferences.Set("ShowCompletedTasks", e.Value);
